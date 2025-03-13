@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 144066a43449f48469b89b2e2c9ab37d, type: 3}
-  m_Name: ShakeBehavior
+  m_Script: {fileID: 11500000, guid: 46368bbfd6df5bd4bafc70291e55e272, type: 3}
+  m_Name: DialogueTest
   m_EditorClassIdentifier: 
-  tagID: shake
-  baseAmplitude: 0.03
-  baseDelay: 0.31
-  baseWaveSize: 0.13
+  dialogueLines:
+  - SALUT COMMENT TU VAS ?
+  - 'SALUT COMMENT TU VAS ? 2 '
+  - 'SALUT COMMENT TU VAS ? 3 '
+  - SALUT COMMENT TU VAS ? 4
