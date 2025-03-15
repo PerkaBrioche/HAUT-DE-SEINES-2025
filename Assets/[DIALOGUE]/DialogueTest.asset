@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - SALUT COMMENT TU VAS ?
-  - 'SALUT COMMENT TU VAS ? 2 '
-  - 'SALUT COMMENT TU VAS ? 3 '
-  - SALUT COMMENT TU VAS ? 4
+  - "Tu es sur que \xE7a va ?"
+  - Tu n'as pas l'air trop bien !
+  - Mange mon caca frr !!
