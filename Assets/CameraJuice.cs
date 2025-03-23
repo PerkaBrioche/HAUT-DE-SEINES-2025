@@ -18,7 +18,6 @@ public class CameraJuice : MonoBehaviour
     void Start()
     {
         initialLocalEulerAngles = transform.localEulerAngles;
-        initialLocalPosition = transform.localPosition;
     }
 
     void Update()
@@ -33,12 +32,5 @@ public class CameraJuice : MonoBehaviour
         float smoothY = Mathf.SmoothDampAngle(desiredRotation.y, transform.localEulerAngles.y,  ref rotationVelocity.y, rotationSmoothTime);
         float smoothZ = Mathf.SmoothDampAngle( desiredRotation.z,  transform.localEulerAngles.z,ref rotationVelocity.z, rotationSmoothTime);
         transform.localEulerAngles = new Vector3(smoothX, smoothY, smoothZ);
-
-        if (usePositionOffset)
-        {
-            Vector3 targetPositionOffset = new Vector3(-offset.x * positionAmount, -offset.y * positionAmount, 0);
-            Vector3 desiredPosition = initialLocalPosition + targetPositionOffset;
-            transform.localPosition = Vector3.Lerp(transform.localPosition, desiredPosition, Time.deltaTime / positionSmoothTime);
-        }
     }
 }

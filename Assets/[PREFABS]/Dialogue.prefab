@@ -53,6 +53,7 @@ MonoBehaviour:
   dialogueText: {fileID: 5091471605292155459}
   typewriter: {fileID: 6314133267280064813}
   _skipIndicator: {fileID: 5399727059511995036}
+  _unlocked: 0
 --- !u!114 &7925978447318626617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,6 +351,7 @@ GameObject:
   - component: {fileID: 2974407117320236932}
   - component: {fileID: 6679001887397821143}
   - component: {fileID: 8712604266485599229}
+  - component: {fileID: 266392126748535607}
   m_Layer: 0
   m_Name: MESH_BulleDialogue
   m_TagString: Untagged
@@ -388,7 +390,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2420707004837761557}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -403,7 +405,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 77d3ba9356fb6c34dbd7c24b370943d6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -447,6 +449,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &266392126748535607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2420707004837761557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa6fb2984690dc546aedfc973572847b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bounceOnEnable: 1
+  bounceForce: 1.2
+  bounceDuration: 0.53
+  bounceDecreaseSpeed: 1.29
 --- !u!1 &5399727059511995036
 GameObject:
   m_ObjectHideFlags: 0

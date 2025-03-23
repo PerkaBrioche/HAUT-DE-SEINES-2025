@@ -9,6 +9,17 @@ public class InteractionManager : MonoBehaviour
     private bool _holdClick = false;
     void Update()
     {
+                
+        if (Input.GetMouseButton(0))
+        {
+            _holdClick = true;
+        }
+        else
+        {
+            _holdClick = false;
+        }
+        
+        
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
@@ -62,16 +73,7 @@ public class InteractionManager : MonoBehaviour
         
         
         
-        
-        
-        if (Input.GetMouseButtonDown(0))
-        {
-            _holdClick = true;
-        }
-        if (Input.GetMouseButtonUp(0))
-        {
-            _holdClick = false;
-        }
+
     }
 
 }

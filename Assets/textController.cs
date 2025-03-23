@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Febucci.UI;
 using UnityEngine;
 using NaughtyAttributes;
@@ -20,19 +21,51 @@ public class textController : MonoBehaviour
     [SerializeField] private TypewriterByCharacter typewriter;
     [Foldout("OTHERS")]
     [SerializeField] private GameObject _skipIndicator;
-    
-    private bool _canSkip;
 
+    [Foldout("OTHERS")]
+    [SerializeField] private bounce3D _bounce3D;
+    private bool _canSkip;
+    public void SetBounce3D(bounce3D bounce)
+    {
+        _bounce3D = bounce;
+    }
     
     private int _currentLine;
 
     private bool _dialogueStarted = false;
     private bool _dialogueEnded = false;
+    
+    [SerializeField] private bool _unlocked = false;
+    
+    private bounce3D _bounce;
+    
+    private bool _canBounce = true;
 
 
+    [Button ("Unlock")]
+    public void Unlock()
+    {
+        SetUnlocked(true);
+    }   
+    public void SetUnlocked(bool value)
+    {
+        _unlocked = value;
+        if (_unlocked)
+        {
+            NewLine();
+        }
+    }
+    
+    
     private void Start()
     {
         SetMeshskip(false);
+        _bounce = dialogueBox.GetComponent<bounce3D>();
+    }
+
+    private void OnEnable()
+    {
+        NewLine();
     }
 
     private void Update()
@@ -49,8 +82,8 @@ public class textController : MonoBehaviour
         if (!_dialogueStarted)
         {
             _dialogueStarted = true;
-                            NewLine();
-                            return;
+            NewLine();
+            return;
         }
         if (_canSkip)
         {
@@ -77,11 +110,13 @@ public class textController : MonoBehaviour
     {
         _dialogueEnded = true;  
         dialogueText.text = "";
+        _bounce.BounceDisapear();
     }
     
     public void NewLine()
     {
         typewriter.ShowText(dialogue.dialogueLines[_currentLine]);
+        _bounce.CustomBounce(1.1f, 0.15f, 1.1f);
     }
     
     public void SetSkip(bool value)
@@ -94,4 +129,23 @@ public class textController : MonoBehaviour
     {
         _skipIndicator.SetActive(value);
     }
+
+    public void BounceCharacter()
+    {
+        if (!_canBounce)
+        {
+            StartCoroutine(WaitForEndOfAnimation()); return;
+        }
+        _canBounce = false;
+        
+        float randomForce = UnityEngine.Random.Range(1.1f, 1.3f);
+        _bounce3D.CustomBounce(randomForce, 0.15f, 2f);
+    }
+
+    private IEnumerator WaitForEndOfAnimation()
+    {
+        yield return new WaitForSeconds(0.4f);
+        _canBounce = true;
+    }
+    
 }
