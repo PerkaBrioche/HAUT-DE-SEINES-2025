@@ -10,10 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 46368bbfd6df5bd4bafc70291e55e272, type: 3}
-  m_Name: DialogueTest
+  m_Name: First
   m_EditorClassIdentifier: 
   dialogueLines:
-  - SALUT COMMENT TU VAS ?
-  - "Tu es sur que \xE7a va ?"
-  - Tu n'as pas l'air trop bien !
-  - Mange mon caca frr !!
+  - text: Voici un texte normal !
+    _smokesToClearEmplacement: 
+  - text: 2
+    _smokesToClearEmplacement: 
+  - text: Hello voici un test avec la brume !
+    _smokesToClearEmplacement: 0000000001000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000012000000
+  - text: 4
+    _smokesToClearEmplacement: 

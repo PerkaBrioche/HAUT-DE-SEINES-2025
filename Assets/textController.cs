@@ -9,7 +9,7 @@ public class textController : MonoBehaviour
 {
     [Header("DIALOGUE INFO")]
     
-    public Dialogue dialogue;
+    private Dialogue dialogue;
     
     [Space(20)]
     
@@ -21,6 +21,7 @@ public class textController : MonoBehaviour
     [SerializeField] private TypewriterByCharacter typewriter;
     [Foldout("OTHERS")]
     [SerializeField] private GameObject _skipIndicator;
+    private SmokeClearer _smokeClearer;
 
     [Foldout("OTHERS")]
     [SerializeField] private bounce3D _bounce3D;
@@ -35,12 +36,25 @@ public class textController : MonoBehaviour
     private bool _dialogueStarted = false;
     private bool _dialogueEnded = false;
     
-    [SerializeField] private bool _unlocked = false;
-    
+    private bool _unlocked = false;
     private bounce3D _bounce;
-    
     private bool _canBounce = true;
 
+    public void CallDialogue(Dialogue dialogue)
+    {
+        _unlocked = true;
+        this.dialogue = dialogue;
+        dialogueBox.SetActive(true);
+        NewLine();
+    }
+
+    private void ResetDialogue()
+    {
+        _currentLine = 0;
+        _dialogueStarted = false;
+        _dialogueEnded = false;
+        _unlocked = false;
+    }
 
     [Button ("Unlock")]
     public void Unlock()
@@ -50,27 +64,21 @@ public class textController : MonoBehaviour
     public void SetUnlocked(bool value)
     {
         _unlocked = value;
-        if (_unlocked)
-        {
-            NewLine();
-        }
     }
-    
-    
+
+    private void Awake()
+    {
+        _smokeClearer = gameObject.GetComponent<SmokeClearer>();
+    }
+
     private void Start()
     {
         SetMeshskip(false);
         _bounce = dialogueBox.GetComponent<bounce3D>();
     }
-
-    private void OnEnable()
-    {
-        NewLine();
-    }
-
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && _unlocked)
         {
             EndLine();
         }
@@ -88,7 +96,6 @@ public class textController : MonoBehaviour
         if (_canSkip)
         {
             SetSkip(false);
-            _currentLine++;
             if (_currentLine < dialogue.dialogueLines.Count)
             {
                 NewLine();
@@ -100,7 +107,6 @@ public class textController : MonoBehaviour
         }
         else
         {
-            print("Skipping");
             SetSkip(true);
             typewriter.SkipTypewriter();
         }
@@ -108,14 +114,22 @@ public class textController : MonoBehaviour
     
     public void EndDialogue()
     {
-        _dialogueEnded = true;  
+        _dialogueEnded = true;
         dialogueText.text = "";
+        ResetDialogue();
+        dialoguemanager.instance.NextDialogue();
         _bounce.BounceDisapear();
     }
     
     public void NewLine()
     {
-        typewriter.ShowText(dialogue.dialogueLines[_currentLine]);
+        typewriter.ShowText(dialogue.dialogueLines[_currentLine].text);
+        if (dialogue.dialogueLines[_currentLine]._smokesToClearEmplacement.Count > 0)
+        {
+            _smokeClearer.enabled = true;
+            _smokeClearer.StartSmokePhase(dialogue.dialogueLines[_currentLine]._smokesToClearEmplacement);
+        }
+        _currentLine++;
         _bounce.CustomBounce(1.1f, 0.15f, 1.1f);
     }
     
