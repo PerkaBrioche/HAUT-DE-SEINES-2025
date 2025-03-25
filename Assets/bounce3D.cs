@@ -130,7 +130,7 @@ public class bounce3D : MonoBehaviour
             transform.localScale = Vector3.Lerp(originalScale,targetScale , smoothT);
             yield return null;
         }
-        Destroy(transform.parent.gameObject);
+        gameObject.SetActive(false);
         transform.localScale = originalScale;
         transform.position = originalPosition;
     }

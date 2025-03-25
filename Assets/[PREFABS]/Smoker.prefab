@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _idleSmoke: {fileID: 6196067890129165389}
   _disapearSmoke: {fileID: 9022992946661779934}
+  cleared: 0
 --- !u!65 &8171858885063241452
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -201,6 +202,10 @@ PrefabInstance:
     - target: {fileID: 682997389608611933, guid: 23fd19a3b6b959c44b267cbf58576249, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 682997389608611933, guid: 23fd19a3b6b959c44b267cbf58576249, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 682997389608611935, guid: 23fd19a3b6b959c44b267cbf58576249, type: 3}
       propertyPath: m_Name

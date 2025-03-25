@@ -13,7 +13,7 @@ public class SmokeController : MonoBehaviour
     private SmokeClearer _smokeClearer;
     private void Awake()
     {
-        _smokeClearer = transform.root.GetComponent<SmokeClearer>();
+        _smokeClearer = transform.parent.parent.parent.GetComponent<SmokeClearer>();
 
     }
 

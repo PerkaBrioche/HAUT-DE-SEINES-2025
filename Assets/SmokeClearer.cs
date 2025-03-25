@@ -19,22 +19,31 @@ public class SmokeClearer : MonoBehaviour
     [Foldout("OTHERS")]
     [SerializeField] private List<SmokeController> smokesToClear;
 
+    [Foldout("OTHERS")] [SerializeField] private GameObject _SmokesAndCanvas;
+    [Foldout("OTHERS")] [SerializeField] private Transform _allSmokesTransform;
+
     private int _smokeAmount;
     private int _smokesCleared = 0;
     
     private bool _end = false;
 
-        public Transform GetCameraPos()
-        {
-            return _transformCameraPos;
-        }   
-    private void Start()
+    public Transform GetCameraPos()
     {
+        return _transformCameraPos;
+    }
+        
+
+    public void StartSmokePhase(List<int> smokeIndex)
+    {
+        _SmokesAndCanvas.SetActive(true);
         _smokeAmount = smokes.Count;
         _smokesTryMax = _smokesTry;
-        AddSmokeToClear();
+        AddSmokeToClear(smokeIndex);
+        
         CameraManager.instance.MoveCamera(_transformCameraPos);
     }
+
+
 
     public void ClearSmoke()
     {
@@ -59,8 +68,12 @@ public class SmokeClearer : MonoBehaviour
         }
     }
 
-    private void AddSmokeToClear()
+    private void AddSmokeToClear(List<int> smokeIndex)
     {
+        foreach (var index in smokeIndex)
+        {
+            _allSmokesTransform.GetChild(index).gameObject.SetActive(false);
+        }
         foreach (var smoke in smokes)
         {
             if(!smoke.gameObject.activeInHierarchy)
