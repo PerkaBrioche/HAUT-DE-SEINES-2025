@@ -4965,8 +4965,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   speed: 1
-  constrain: {x: 0.1, y: 6.5}
   umbrella: {fileID: 4818766112399628467}
+  tmp: {fileID: 7882199988360760509}
+  text: TEST
 --- !u!1 &1074136471872531370
 GameObject:
   m_ObjectHideFlags: 0

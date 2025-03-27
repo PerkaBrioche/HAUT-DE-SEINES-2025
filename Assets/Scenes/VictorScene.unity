@@ -556,9 +556,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 95487278733447739, guid: 7a1b1d2b6bb6667448e9a99499735411, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 95487278733447739, guid: 7a1b1d2b6bb6667448e9a99499735411, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 47
+      objectReference: {fileID: 0}
     - target: {fileID: 775528527817398800, guid: 7a1b1d2b6bb6667448e9a99499735411, type: 3}
       propertyPath: m_Name
       value: CanvasUmbrella
+      objectReference: {fileID: 0}
+    - target: {fileID: 2965337097639105896, guid: 7a1b1d2b6bb6667448e9a99499735411, type: 3}
+      propertyPath: text
+      value: MAMAMMIA
       objectReference: {fileID: 0}
     - target: {fileID: 3504555438030281134, guid: 7a1b1d2b6bb6667448e9a99499735411, type: 3}
       propertyPath: m_Pivot.x
@@ -639,6 +651,10 @@ PrefabInstance:
     - target: {fileID: 3504555438030281134, guid: 7a1b1d2b6bb6667448e9a99499735411, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7882199988360760509, guid: 7a1b1d2b6bb6667448e9a99499735411, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
