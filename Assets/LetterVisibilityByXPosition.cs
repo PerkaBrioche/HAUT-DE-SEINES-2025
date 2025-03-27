@@ -1,10 +1,9 @@
 using UnityEngine;
 using TMPro;
 
-[RequireComponent(typeof(TextMeshProUGUI))]
 public class LetterVisibilityByLetterXPosition : MonoBehaviour
 {
-    [SerializeField]private Transform parapluie;
+    [SerializeField] private Transform parapluie;
 
     private TextMeshProUGUI _textMesh;
     private Matrix4x4 _localToWorldMatrix;
