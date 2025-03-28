@@ -26,6 +26,7 @@ public class textController : MonoBehaviour
     [Foldout("OTHERS")]
     [SerializeField] private bounce3D _bounce3D;
     private bool _canSkip;
+    private bool _inSmokePhase = false;
     public void SetBounce3D(bounce3D bounce)
     {
         _bounce3D = bounce;
@@ -78,7 +79,7 @@ public class textController : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && _unlocked)
+        if (Input.GetKeyDown(KeyCode.Space) && _unlocked && !_inSmokePhase)
         {
             EndLine();
         }
@@ -87,12 +88,6 @@ public class textController : MonoBehaviour
     public void EndLine()
     {
         if(_dialogueEnded) return;
-        if (!_dialogueStarted)
-        {
-            _dialogueStarted = true;
-            NewLine();
-            return;
-        }
         if (_canSkip)
         {
             SetSkip(false);
@@ -120,12 +115,19 @@ public class textController : MonoBehaviour
         dialoguemanager.instance.NextDialogue();
         _bounce.BounceDisapear();
     }
+
+    public void SmokeCleared()
+    {
+        _inSmokePhase = false;
+        _smokeClearer.enabled = false;
+    }
     
     public void NewLine()
     {
         typewriter.ShowText(dialogue.dialogueLines[_currentLine].text);
         if (dialogue.dialogueLines[_currentLine]._smokesToClearEmplacement.Count > 0)
         {
+            _inSmokePhase = true;
             _smokeClearer.enabled = true;
             _smokeClearer.StartSmokePhase(dialogue.dialogueLines[_currentLine]._smokesToClearEmplacement);
         }

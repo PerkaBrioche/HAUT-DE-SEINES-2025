@@ -9,13 +9,11 @@ public class bounce3D : MonoBehaviour
     public float bounceDecreaseSpeed = 3f;
 
     private Vector3 originalScale;
-    private Vector3 originalPosition;
 
     private bool _isHilighted = false;
     private void Awake()
     {
         originalScale = transform.localScale;
-        originalPosition = transform.position;
     }
 
     
@@ -29,7 +27,6 @@ public class bounce3D : MonoBehaviour
         
         float timer = 0;
         Vector3 targetScale = originalScale * force;
-        Vector3 targetPosition = originalPosition;
 
         while (timer < duration)
         {
@@ -37,7 +34,6 @@ public class bounce3D : MonoBehaviour
             float t = Mathf.Clamp01(timer / duration);
             float smoothT = Mathf.SmoothStep(0f, 1f, t);
             transform.localScale = Vector3.Lerp(originalScale, targetScale, smoothT);
-            transform.position = Vector3.Lerp(originalPosition, targetPosition, smoothT);
             yield return null;
         }
 
@@ -47,12 +43,10 @@ public class bounce3D : MonoBehaviour
             float t = Mathf.Clamp01(timer / duration);
             float smoothT = Mathf.SmoothStep(0f, 1f, t);
             transform.localScale = Vector3.Lerp(originalScale, targetScale, smoothT);
-            transform.position = Vector3.Lerp(originalPosition, targetPosition, smoothT);
             yield return null;
         }
 
         transform.localScale = originalScale;
-        transform.position = originalPosition;
     }
     private void OnEnable()
     {
@@ -88,7 +82,6 @@ public class bounce3D : MonoBehaviour
     {
         float timer = timers;
         Vector3 targetScale = originalScale * bounceForce;
-        Vector3 targetPosition = originalPosition;
 
         while (timer < bounceDuration)
         {
@@ -96,7 +89,6 @@ public class bounce3D : MonoBehaviour
             float t = Mathf.Clamp01(timer / bounceDuration);
             float smoothT = Mathf.SmoothStep(0f, 1f, t);
             transform.localScale = Vector3.Lerp(originalScale, targetScale, smoothT);
-            transform.position = Vector3.Lerp(originalPosition, targetPosition, smoothT);
             yield return null;
         }
 
@@ -110,12 +102,10 @@ public class bounce3D : MonoBehaviour
             float t = Mathf.Clamp01(timer / bounceDuration);
             float smoothT = Mathf.SmoothStep(0f, 1f, t);
             transform.localScale = Vector3.Lerp(originalScale, targetScale, smoothT);
-            transform.position = Vector3.Lerp(originalPosition, targetPosition, smoothT);
             yield return null;
         }
 
         transform.localScale = originalScale;
-        transform.position = originalPosition;
     }
     private IEnumerator DispearRoutine()
     {
@@ -132,7 +122,6 @@ public class bounce3D : MonoBehaviour
         }
         gameObject.SetActive(false);
         transform.localScale = originalScale;
-        transform.position = originalPosition;
     }
     public void BounceDisapear()
     {
@@ -144,6 +133,5 @@ public class bounce3D : MonoBehaviour
     {
         StopAllCoroutines();
         transform.localScale = originalScale;
-        transform.position = originalPosition;
     }
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class dialoguemanager : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class dialoguemanager : MonoBehaviour
         }
     }
     
+    
+    
     public List<_DialogueSequence> _dialogueSequences;
     private int _currentDialogueIndex = 0;
     [Serializable]
@@ -20,6 +23,14 @@ public class dialoguemanager : MonoBehaviour
     {
         public characterController Character;
         public Dialogue Dialogue;
+        public bool _isDestination;
+        public Transform _destination;
+        public UnityEvent _action;
+    }
+
+    public void DestinationChecked()
+    {
+        NextDialogue();
     }
 
     private void Start()
@@ -29,15 +40,25 @@ public class dialoguemanager : MonoBehaviour
 
     public void NextDialogue()
     {
-        if (_currentDialogueIndex >= _dialogueSequences.Count)
+        if(_dialogueSequences[_currentDialogueIndex]._action != null)
         {
-            return;
+            _dialogueSequences[_currentDialogueIndex]._action.Invoke();
         }
+        if (_currentDialogueIndex >= _dialogueSequences.Count) {return;} // END GAME
+        
         characterController character = _dialogueSequences[_currentDialogueIndex].Character;
-        Dialogue dialogue = _dialogueSequences[_currentDialogueIndex].Dialogue;
+
+        if(_dialogueSequences[_currentDialogueIndex]._isDestination)
+        {
+            character.SetDestination(_dialogueSequences[_currentDialogueIndex]._destination);
+        }
+        else
+        {
+            Dialogue dialogue = _dialogueSequences[_currentDialogueIndex].Dialogue;
+            character.CallDialogue(dialogue);
+        }
         
         _currentDialogueIndex++;
-        
-        character.CallDialogue(dialogue);
+
     }
 }

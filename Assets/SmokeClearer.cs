@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
@@ -18,6 +19,8 @@ public class SmokeClearer : MonoBehaviour
     [SerializeField] private Transform _transformCameraPos;
     [Foldout("OTHERS")]
     [SerializeField] private List<SmokeController> smokesToClear;
+    [Foldout("OTHERS")]
+    [SerializeField] private textController textController;
 
     [Foldout("OTHERS")] [SerializeField] private GameObject _SmokesAndCanvas;
     [Foldout("OTHERS")] [SerializeField] private Transform _allSmokesTransform;
@@ -93,7 +96,6 @@ public class SmokeClearer : MonoBehaviour
             {
                 if (!smoke.cleared)
                 {
-                    print("SMOKE NOT CLEARED = " +  smoke.name);
                     win = false;
                     break;
                 }
@@ -107,11 +109,24 @@ public class SmokeClearer : MonoBehaviour
                 print("SMOKE NULL");
             }
         }
+        
         if (win)
         {
+            StopAllCoroutines();
             _end = true;
             ClearAll();
         }
+        else
+        {
+            StopCoroutine("SecondCheck");
+            StartCoroutine("SecondCheck");
+        }
+    }
+
+    private IEnumerator SecondCheck()
+    {
+        yield return new WaitForSecondsRealtime(1f);
+        CheckSmokeToClear();
     }
     
     private void ClearAll()
@@ -120,6 +135,7 @@ public class SmokeClearer : MonoBehaviour
         {
             smoke.Diseapear();
         }
+        textController.SmokeCleared();
         
         CameraManager.instance.BackToDefaultPosition();
     }

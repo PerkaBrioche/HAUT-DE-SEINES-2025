@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46368bbfd6df5bd4bafc70291e55e272, type: 3}
+  m_Name: 20_23-PetiteFille
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - text: "Parce que a derni\xE8re fois.. tu sais quand on \xE9tait dans sa chambre
+      d\u2019hopital\u2026"
+    _smokesToClearEmplacement: 
+  - text: "Je t\u2019ai demand\xE9 si tu voulais passer du temps seul avec lui..."
+    _smokesToClearEmplacement: 
+  - text: "et tu m\u2019as dit non. Je regrette de pas avoir insist\xE9 pour toi."
+    _smokesToClearEmplacement: 
+  - text: "Et la \u2026 je sais pas. J\u2019ai l\u2019impression que tu demande aux
+      autres de faire ce que tu ne sais pas faire. Et \xE7a m\u2019\xE9nerve."
+    _smokesToClearEmplacement: 
+  - text: "J\u2019ai l\u2019impression que la vie d\u2019une araign\xE9e a plus de
+      valeur pour toi que celle de papi\u2026"
+    _smokesToClearEmplacement: 
