@@ -15,6 +15,7 @@ MonoBehaviour:
   dialogueLines:
   - text: "Je vois, garde bien en t\xEAte ce qui vient de se passer. "
     _smokesToClearEmplacement: 
-  - text: "C\u2019est important de remarquer ses erreurs et de se souvenir de ce
-      qu\u2019on aurait pu faire de mieux."
+  - text: "C\u2019est important de remarquer ses erreurs "
+    _smokesToClearEmplacement: 
+  - text: "et et de se souvenir de ce qu\u2019on aurait pu faire de mieux."
     _smokesToClearEmplacement: 

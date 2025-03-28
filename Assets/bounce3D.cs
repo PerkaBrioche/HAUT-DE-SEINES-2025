@@ -16,6 +16,10 @@ public class bounce3D : MonoBehaviour
         originalScale = transform.localScale;
     }
 
+    public void StopAllcoroutines()
+    {
+        StopAllCoroutines();
+    }
     
     public void CustomBounce(float force, float duration, float decreaseSpeed)
     {

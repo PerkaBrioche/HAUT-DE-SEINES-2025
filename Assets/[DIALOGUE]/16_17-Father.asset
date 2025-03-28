@@ -15,8 +15,9 @@ MonoBehaviour:
   dialogueLines:
   - text: "C\u2019est pas pareil..."
     _smokesToClearEmplacement: 
-  - text: "On voyait papi souffrir tous les jours et on savait que \xE7a n\u2019allait
-      plus jamais \xEAtre comme avant. "
+  - text: On voyait papi souffrir tous les jours...
+    _smokesToClearEmplacement: 
+  - text: "et on savait que \xE7a n\u2019allait plus jamais \xEAtre comme avant. "
     _smokesToClearEmplacement: 
   - text: "Ou plut\xF4t que c\u2019\xE9tait la fin..."
     _smokesToClearEmplacement: 

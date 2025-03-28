@@ -103,4 +103,9 @@ public class characterController : MonoBehaviour
         yield return new WaitForSeconds(1);
         _characterMesh.SetActive(true);
     }
+
+    public void TeleportCharacter(Transform destination)
+    {
+        transform.position = new Vector3(destination.position.x,  transform.position.y, destination.position.z);
+    }
 }

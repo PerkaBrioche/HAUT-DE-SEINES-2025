@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: 15-PetiteFille
   m_EditorClassIdentifier: 
   dialogueLines:
-  - text: "Tu disais souvent qu\u2019il fallait le \xAB d\xE9brancher \xBB en rigolant."
+  - text: "Tu disais souvent qu\u2019il fallait le \"d\xE9brancher\" en rigolant."
     _smokesToClearEmplacement: 
-  - text: "Qu'on devait arr\xEAter de faire la chimio mais c\u2019est comme le tuer\u2026"
+  - text: "Qu'on devait arr\xEAter de faire la chimio mais c\u2019est comme le tuer,
+      non ?"
     _smokesToClearEmplacement: 

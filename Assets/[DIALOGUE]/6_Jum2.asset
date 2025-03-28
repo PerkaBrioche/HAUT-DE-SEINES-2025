@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: 6_Jum2
   m_EditorClassIdentifier: 
   dialogueLines:
-  - text: "Moi je veux pas la garder ! Je n\u2019aime pas \xE7a l\u2019araign\xE9e
-      c\u2019est moche et \xE7a fait peur."
+  - text: 'Moi je veux pas la garder ! '
+    _smokesToClearEmplacement: 
+  - text: "Je n\u2019aime pas \xE7a l\u2019araign\xE9e c\u2019est moche et \xE7a
+      fait peur."
     _smokesToClearEmplacement: 

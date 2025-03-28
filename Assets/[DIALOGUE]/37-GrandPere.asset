@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: 37-GrandPere
   m_EditorClassIdentifier: 
   dialogueLines:
-  - text: "Oui et trouve des mots a lui dire pour pas que \xE7a ne te p\xE8se sur
-      la conscience quand ca sera trop tard. "
+  - text: 'Oui et trouve des mots a lui dire '
+    _smokesToClearEmplacement: 
+  - text: "pour pas que \xE7a ne te p\xE8se sur la conscience quand ca sera trop
+      tard."
     _smokesToClearEmplacement: 

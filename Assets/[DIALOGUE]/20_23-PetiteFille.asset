@@ -18,10 +18,16 @@ MonoBehaviour:
     _smokesToClearEmplacement: 
   - text: "Je t\u2019ai demand\xE9 si tu voulais passer du temps seul avec lui..."
     _smokesToClearEmplacement: 
-  - text: "et tu m\u2019as dit non. Je regrette de pas avoir insist\xE9 pour toi."
+  - text: "et tu m\u2019as dit non."
     _smokesToClearEmplacement: 
-  - text: "Et la \u2026 je sais pas. J\u2019ai l\u2019impression que tu demande aux
-      autres de faire ce que tu ne sais pas faire. Et \xE7a m\u2019\xE9nerve."
+  - text: "Je regrette de pas avoir insist\xE9 pour toi."
+    _smokesToClearEmplacement: 
+  - text: "Et la \u2026 je sais pas."
+    _smokesToClearEmplacement: 
+  - text: "J\u2019ai l\u2019impression que tu demande aux autres de faire ce que
+      tu ne sais pas faire."
+    _smokesToClearEmplacement: 
+  - text: " Et \xE7a m\u2019\xE9nerve."
     _smokesToClearEmplacement: 
   - text: "J\u2019ai l\u2019impression que la vie d\u2019une araign\xE9e a plus de
       valeur pour toi que celle de papi\u2026"

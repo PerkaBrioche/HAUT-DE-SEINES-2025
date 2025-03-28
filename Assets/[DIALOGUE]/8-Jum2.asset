@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 8-Jum2
   m_EditorClassIdentifier: 
   dialogueLines:
-  - text: "Oui parce qu\u2019elle connais la maison maintenant, elle reviendra c\u2019est
-      s\xFBr. "
+  - text: "Oui parce qu\u2019elle connais la maison maintenant !"
+    _smokesToClearEmplacement: 
+  - text: "Elle reviendra c\u2019est s\xFBr."
     _smokesToClearEmplacement: 

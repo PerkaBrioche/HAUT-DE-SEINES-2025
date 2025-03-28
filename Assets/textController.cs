@@ -83,6 +83,11 @@ public class textController : MonoBehaviour
         {
             EndLine();
         }
+        
+        if(_unlocked && !_dialogueEnded)
+        {
+            dialogueBox.SetActive(true);
+        }
     }
 
     public void EndLine()
@@ -124,6 +129,11 @@ public class textController : MonoBehaviour
     
     public void NewLine()
     {
+        _bounce3D.StopAllCoroutines();
+        if (!dialogueBox.activeInHierarchy)
+        {
+            dialogueBox.SetActive(true); 
+        }
         typewriter.ShowText(dialogue.dialogueLines[_currentLine].text);
         if (dialogue.dialogueLines[_currentLine]._smokesToClearEmplacement.Count > 0)
         {
