@@ -27,6 +27,7 @@ public class textController : MonoBehaviour
     [SerializeField] private bounce3D _bounce3D;
     private bool _canSkip;
     private bool _inSmokePhase = false;
+    private bool _inWaitForSkip = false;
     public void SetBounce3D(bounce3D bounce)
     {
         _bounce3D = bounce;
@@ -46,6 +47,8 @@ public class textController : MonoBehaviour
         _unlocked = true;
         this.dialogue = dialogue;
         dialogueBox.SetActive(true);
+        _inWaitForSkip = true;
+        StartCoroutine(WaitForSkip());
         NewLine();
     }
 
@@ -79,7 +82,7 @@ public class textController : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && _unlocked && !_inSmokePhase)
+        if (Input.GetKeyDown(KeyCode.Space) && _unlocked && !_inSmokePhase && !_inWaitForSkip)
         {
             EndLine();
         }
@@ -172,6 +175,12 @@ public class textController : MonoBehaviour
     {
         yield return new WaitForSeconds(0.4f);
         _canBounce = true;
+    }
+    
+    private IEnumerator WaitForSkip()
+    {
+        yield return new WaitForSeconds(0.3f);
+        _inWaitForSkip = false;
     }
     
 }

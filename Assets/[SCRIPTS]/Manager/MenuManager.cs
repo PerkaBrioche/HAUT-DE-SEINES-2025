@@ -7,65 +7,26 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    public TMP_InputField FIELD;
 
-    public List<GameObject> MenuList;
-    public List<GameObject> LeaéderboarList;
 
-    public Animation ANIM_Field;
-
-    private bool LeaderboardShown;
-
-    public void LoadScene(int Index)
+    
+    public void GoMmENU()
     {
-        if (FIELD.text.Length > 0)
-        {
-            SceneManager.LoadScene(Index);
-        }
-        else
-        {
-            ANIM_Field.Play();
-        }
+        SceneManager.LoadScene(0);
     }
+    
+    public void  StartGame()
+    {
+        SceneManager.LoadScene(1);
+    }
+
     public void QuitGame()
     {
         Application.Quit();
     }
 
-    public void Leaderboard()
+    public void OpenURL()
     {
-        LeaderboardShown =! LeaderboardShown;
-        if (LeaderboardShown)
-        {
-            HideLeaderboard();
-        }
-        else
-        {
-            ShowLeaderboard();
-        }
-    }
-
-    public void ShowLeaderboard()
-    {
-        for (int i = 0; i < MenuList.Count; i++)
-        {
-            MenuList[i].SetActive(false);
-        }        
-        for (int i = 0; i < LeaéderboarList.Count; i++)
-        {
-            LeaéderboarList[i].SetActive(true);
-        }
-    }
-    
-    public void HideLeaderboard()
-    {
-        for (int i = 0; i < MenuList.Count; i++)
-        {
-            MenuList[i].SetActive(true);
-        }        
-        for (int i = 0; i < LeaéderboarList.Count; i++)
-        {
-            LeaéderboarList[i].SetActive(false);
-        }
+        Application.OpenURL("https://alzheimer-recherche.org/faire-un-don-pour-la-recherche-sur-la-maladie-dalzheimer/?gad_source=1&gclid=Cj0KCQjwkZm_BhDrARIsAAEbX1FpVisR_rD_jTVmvJ1MTxqOQLwK-BtxjtIJnqQ1o0TScmHPeqMvni8aAmETEALw_wcB");
     }
 }

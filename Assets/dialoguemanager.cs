@@ -26,6 +26,7 @@ public class dialoguemanager : MonoBehaviour
         public bool _isDestination;
         public Transform _destination;
         public UnityEvent _action;
+        public UnityEvent _sound;
     }
 
     public void DestinationChecked()
@@ -40,6 +41,10 @@ public class dialoguemanager : MonoBehaviour
 
     public void NextDialogue()
     {
+        if(_dialogueSequences[_currentDialogueIndex]._sound != null)
+        {
+            _dialogueSequences[_currentDialogueIndex]._sound.Invoke();
+        }
         if(_dialogueSequences[_currentDialogueIndex]._action != null)
         {
             _dialogueSequences[_currentDialogueIndex]._action.Invoke();

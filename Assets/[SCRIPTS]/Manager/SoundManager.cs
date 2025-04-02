@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(AudioSource))]
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;
@@ -42,6 +43,7 @@ public class SoundManager : MonoBehaviour
         if(sfxVolumeSlider != null)
         sfxVolumeSlider.value = PlayerPrefs.GetFloat("SFXVolume", 1);
         
+        if(audioMixer == null){return;}
         audioMixer.SetFloat("Master", GetDB( masterVolumeSlider.value));
         audioMixer.SetFloat("MusicVolume", GetDB( musicVolumeSlider.value));
         audioMixer.SetFloat("SFXVolume", GetDB( sfxVolumeSlider.value));
@@ -75,58 +77,38 @@ public class SoundManager : MonoBehaviour
 
     public enum SoundList // IN ORDER
     {
-        ShipAttack,
-        ShipDeath,
-        ButtonClick,
-        Win,
-        Lose,
-        Star1,
-        Star2,
-        Star3,
-        PlayerPhase,
-        EnemyPhase,
+        jumOneWalk, //0
+        jumTwoWalk,
+        GMWalk,
+        LitteGWalk,//3
+        GMSmoke,
+        GMSmokeEnd,//5
+        GlitchHospital,
+        TransitionHospital,
+        TransitonHouse, //8
+        ChracterDiseapearSmoke,
+        AmbienceForest , //10
+        
     }
     
     public void PlayButtonSound()
     {
-        PlaySound(SoundList.ButtonClick);
     }
 
+    public void PlaySoundIndex(int index)
+    {
+        if (index >= 0 && index < _audioClips.Count)
+        {
+            _audioSource.PlayOneShot(_audioClips[index]);
+            print("Playing sound at index: " + index + " with name: " + _audioClips[index].name);
+        }
+    }
     public void PlaySound(SoundList sound)
     {
-        switch (sound)
+        int index = (int)sound;
+        if (index >= 0 && index < _audioClips.Count)
         {
-            case SoundList.ShipAttack:
-                _audioSource.PlayOneShot(_audioClips[Random.Range(0, 2)]);
-                break;
-            case SoundList.ShipDeath:
-                _audioSource.PlayOneShot(_audioClips[2]);
-                break;
-            case SoundList.ButtonClick:
-                _audioSource.PlayOneShot(_audioClips[3]);
-                break;
-            case SoundList.Win:
-                _audioSource.PlayOneShot(_audioClips[4]);
-                break;
-            case SoundList.Lose:
-                _audioSource.PlayOneShot(_audioClips[5]);
-                break;
-            case SoundList.Star1:
-                _audioSource.PlayOneShot(_audioClips[6]);
-                break;
-            case SoundList.Star2:
-                _audioSource.PlayOneShot(_audioClips[7]);
-                break;
-            case SoundList.Star3:
-                _audioSource.PlayOneShot(_audioClips[8]);
-                break;
-            case SoundList.PlayerPhase:
-                _audioSource.PlayOneShot(_audioClips[9]);
-                break;
-            case SoundList.EnemyPhase:
-                _audioSource.PlayOneShot(_audioClips[10]);
-                break;
-            
+            _audioSource.PlayOneShot(_audioClips[index]);
         }
     }
 
