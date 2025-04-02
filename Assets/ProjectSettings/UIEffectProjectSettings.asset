@@ -145,6 +145,13 @@ ShaderVariantCollection:
         passType: 0
       - keywords: TRANSITION_COLOR_MULTIPLY_ADDITIVE TRANSITION_SHINY
         passType: 0
+  - first: {fileID: 4800000, guid: c67f821adbb6348a3a21573a25b55de0, type: 3}
+    second:
+      variants:
+      - keywords: TRANSITION_BURN TRANSITION_COLOR_REPLACE
+        passType: 0
+      - keywords: TRANSITION_BURN TRANSITION_COLOR_REPLACE UNDERLAY_ON
+        passType: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0

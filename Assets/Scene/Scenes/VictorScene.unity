@@ -487,67 +487,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &7861593616774836968
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 196683372253352605, guid: d07753fd72607c84782c68a4d8890442, type: 3}
-      propertyPath: 'CollisionModule.m_Planes.Array.data[0]'
-      value: 
-      objectReference: {fileID: 1519783852}
-    - target: {fileID: 1005099192662334213, guid: d07753fd72607c84782c68a4d8890442, type: 3}
-      propertyPath: m_Name
-      value: Rain
-      objectReference: {fileID: 0}
-    - target: {fileID: 6124161535279389949, guid: d07753fd72607c84782c68a4d8890442, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6124161535279389949, guid: d07753fd72607c84782c68a4d8890442, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.27
-      objectReference: {fileID: 0}
-    - target: {fileID: 6124161535279389949, guid: d07753fd72607c84782c68a4d8890442, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6124161535279389949, guid: d07753fd72607c84782c68a4d8890442, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6124161535279389949, guid: d07753fd72607c84782c68a4d8890442, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6124161535279389949, guid: d07753fd72607c84782c68a4d8890442, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6124161535279389949, guid: d07753fd72607c84782c68a4d8890442, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6124161535279389949, guid: d07753fd72607c84782c68a4d8890442, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6124161535279389949, guid: d07753fd72607c84782c68a4d8890442, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6124161535279389949, guid: d07753fd72607c84782c68a4d8890442, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d07753fd72607c84782c68a4d8890442, type: 3}
 --- !u!1001 &7877365449151161709
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -557,20 +496,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 95487278733447739, guid: 7a1b1d2b6bb6667448e9a99499735411, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 95487278733447739, guid: 7a1b1d2b6bb6667448e9a99499735411, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 47
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 775528527817398800, guid: 7a1b1d2b6bb6667448e9a99499735411, type: 3}
       propertyPath: m_Name
       value: CanvasUmbrella
-      objectReference: {fileID: 0}
-    - target: {fileID: 2965337097639105896, guid: 7a1b1d2b6bb6667448e9a99499735411, type: 3}
-      propertyPath: text
-      value: MAMAMMIA
       objectReference: {fileID: 0}
     - target: {fileID: 3504555438030281134, guid: 7a1b1d2b6bb6667448e9a99499735411, type: 3}
       propertyPath: m_Pivot.x
@@ -652,10 +583,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7882199988360760509, guid: 7a1b1d2b6bb6667448e9a99499735411, type: 3}
-      propertyPath: m_HorizontalAlignment
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 6864762957201739640, guid: 7a1b1d2b6bb6667448e9a99499735411, type: 3}
+      propertyPath: 'CollisionModule.m_Planes.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1519783852}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -669,5 +600,4 @@ SceneRoots:
   - {fileID: 1481202099}
   - {fileID: 7877365449151161709}
   - {fileID: 737671517}
-  - {fileID: 7861593616774836968}
   - {fileID: 1519783852}

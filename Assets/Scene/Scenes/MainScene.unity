@@ -3756,7 +3756,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -9754,7 +9754,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3504555438030281134, guid: 7a1b1d2b6bb6667448e9a99499735411, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1.77
+      value: 0.54
       objectReference: {fileID: 0}
     - target: {fileID: 3504555438030281134, guid: 7a1b1d2b6bb6667448e9a99499735411, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -9774,7 +9774,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4818766112399628467, guid: 7a1b1d2b6bb6667448e9a99499735411, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -1.85
+      value: -3.43
       objectReference: {fileID: 0}
     - target: {fileID: 5064660118226911429, guid: 7a1b1d2b6bb6667448e9a99499735411, type: 3}
       propertyPath: m_PresetInfoIsWorld
