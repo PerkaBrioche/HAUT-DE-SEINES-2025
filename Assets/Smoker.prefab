@@ -626,6 +626,10 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 682997389608611933, guid: 23fd19a3b6b959c44b267cbf58576249, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 682997389608611935, guid: 23fd19a3b6b959c44b267cbf58576249, type: 3}
       propertyPath: m_Name
       value: EndSmoke

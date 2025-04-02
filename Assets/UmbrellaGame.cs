@@ -34,7 +34,8 @@ public class UmbrellaGame : MonoBehaviour
 
             if (umbrella.position.x >= startX + textWidth)
             {
-                OnFinished.Invoke();
+                dialoguemanager.instance.NextDialogue();
+                print("FINISHED");
                 hasFinished = true;
             }
         }

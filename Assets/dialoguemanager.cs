@@ -41,6 +41,7 @@ public class dialoguemanager : MonoBehaviour
 
     public void NextDialogue()
     {
+
         if(_dialogueSequences[_currentDialogueIndex]._sound != null)
         {
             _dialogueSequences[_currentDialogueIndex]._sound.Invoke();
@@ -49,9 +50,24 @@ public class dialoguemanager : MonoBehaviour
         {
             _dialogueSequences[_currentDialogueIndex]._action.Invoke();
         }
-        if (_currentDialogueIndex >= _dialogueSequences.Count) {return;} // END GAME
+
+        if (_currentDialogueIndex >= _dialogueSequences.Count)
+        {
+            _currentDialogueIndex++;
+
+
+            return;
+            
+        } // END GAME
         
         characterController character = _dialogueSequences[_currentDialogueIndex].Character;
+        if (character == null)
+        {
+            _currentDialogueIndex++;
+
+            return;
+            
+        }
 
         if(_dialogueSequences[_currentDialogueIndex]._isDestination)
         {
@@ -62,8 +78,8 @@ public class dialoguemanager : MonoBehaviour
             Dialogue dialogue = _dialogueSequences[_currentDialogueIndex].Dialogue;
             character.CallDialogue(dialogue);
         }
-        
         _currentDialogueIndex++;
+
 
     }
 }

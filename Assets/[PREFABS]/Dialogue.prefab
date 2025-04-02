@@ -109,6 +109,7 @@ MonoBehaviour:
   - {fileID: 3214990906241799095}
   _transformCameraPos: {fileID: 4293657481775262161}
   smokesToClear: []
+  textController: {fileID: 0}
   _SmokesAndCanvas: {fileID: 0}
   _allSmokesTransform: {fileID: 0}
 --- !u!1 &430987611761476668
@@ -2138,6 +2139,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4737628318583449936, guid: 813b81b565013a342a5a813a9123ab3c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042338477498873591, guid: 813b81b565013a342a5a813a9123ab3c, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8349574197303924616, guid: 813b81b565013a342a5a813a9123ab3c, type: 3}
